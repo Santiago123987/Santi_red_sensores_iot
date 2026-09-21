@@ -53,8 +53,8 @@ public class IngestaSensores {
 
         BancoDePruebas.experimentoUno();
         BancoDePruebas.experimentoDos();
-        BancoDePruebas.experimentoTres();
-        BancoDePruebas.experimentoCuatro();
+        //BancoDePruebas.experimentoTres();
+        //BancoDePruebas.experimentoCuatro();
     }
 
     private static void imprimirResumenIngesta(
