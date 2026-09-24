@@ -85,6 +85,8 @@ public class BuscadorLecturas {
 
             int medio = (inicio + fin) / 2;
 
+            System.out.println("inicio=" + inicio + " fin=" + fin + " medio=" + medio);
+
             comparaciones++;
 
             int comparacion =
@@ -101,10 +103,50 @@ public class BuscadorLecturas {
             } else {
                 fin = medio - 1;
             }
+
         }
 
         return -1;
     }
+
+    /**
+     * Búsqueda binaria por PM2.5.
+     *
+     * PRECONDICIÓN:
+     * el arreglo debe estar ordenado ascendentemente
+     * por PM2.5.
+     *
+     * El generador de la Semana 3 no garantiza esta condición.
+     */
+    public static int busquedaBinariaPorPm25(
+            LecturaSensor[] datos,
+            double pm25) {
+
+        comparaciones = 0;
+
+        int inicio = 0;
+        int fin = datos.length - 1;
+
+        while (inicio <= fin) {
+
+            int medio = (inicio + fin) / 2;
+
+            comparaciones++;
+
+            if (datos[medio].getPm25() == pm25) {
+                return medio;
+            }
+
+            if (datos[medio].getPm25() < pm25) {
+                inicio = medio + 1;
+            } else {
+                fin = medio - 1;
+            }
+        }
+
+        return -1;
+    }
+
 
 
 
